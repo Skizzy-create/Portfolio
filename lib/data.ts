@@ -4,10 +4,15 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import BHospitalDark from "@/public/BHospital-Dark.png";
 import Rentry from "@/public/Rentry.png"
-import paytmTransction from "@/public/Paytm-Transction.png";
+import paytmSingup from "@/public/Paytm_singup.png";
 import groundT5 from "@/public/groundT-(-5).png"
 import groundT2 from "@/public/groundT-2.png"
 import positionEstimate from "@/public/PositionEstimator.png"
+import BHospitalLight from '@/public/BhospitalLight.png'
+import cropComment from "@/public/corpcomment.png";
+import rmtDev from '@/public/rmtdev.png';
+import wordAnalytics from '@/public/wordanalytics.png';
+
 export const links = [
     {
         name: "Home",
@@ -64,27 +69,43 @@ export const experiencesData = [
 
 export const projectsData = [
     {
-        title: "CorpComment",
+        title: "Paytm Clone - Full-Stack Application",
         description:
-            "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-        tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+            "Features user sign-up, log-in, balance checks, fund transfers, and transaction views. Utilizes React for the frontend and Express.js for the backend.",
+        tags: ["React", "Node", "MongoDB", "Tailwind", "Express.js", "JWT Authentication"],
+        imageUrl: paytmSingup,
+    },
+    {
+        title: "MyEncrypt - Full-Stack Encryption App",
+        description:
+            "Offers encryption, decryption, JWT handling, and QR code generation, built with Express.js and TypeScript.",
+        tags: ["Express.js", "Mongoose", "JWT", "BcryptJS", "Crypto", "QR Code", "TypeScript"],
+        imageUrl: rmtDev,
+    },
+    {
+        title: "Fashion Image Generation Using GAN",
+        description:
+            "Generates fashion images using a GAN trained on the Fashion MNIST dataset, emphasizing high accuracy rates.",
+        tags: ["GAN", "TensorFlow", "Python", "Deep Learning"],
+        imageUrl: cropComment,
+    },
+    {
+        title: "Hybrid Model Architecture for Position Estimation",
+        description:
+            "Combines Dense and LSTM layers for 3D position prediction, optimized for rapid computation with GPU support.",
+        tags: ["Deep Learning", "RNN", "LSTM", "Python"],
+        imageUrl: Rentry,
+    },
+    {
+        title: "Satellite Image Processing for Road Extraction",
+        description:
+            "Employs a U-Net model to extract roads from satellite images, optimized for clarity and speed with TensorFlow and OpenCV.",
+        tags: ["CNN", "U-Net", "OpenCV", "TensorFlow"],
         imageUrl: BHospitalDark,
-    },
-    {
-        title: "rmtDev",
-        description:
-            "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-        tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-        imageUrl: groundT5,
-    },
-    {
-        title: "Word Analytics",
-        description:
-            "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-        tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-        imageUrl: positionEstimate,
-    },
+    }
 ] as const;
+
+
 
 export const skillsData = [
     "HTML",
