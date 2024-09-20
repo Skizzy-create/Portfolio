@@ -2,16 +2,19 @@
 
 import React from 'react'
 import SectionHeader from './section-Header'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 export default function About() {
+
+
     return (
         <motion.section
-            className='mb-28 text-center max-w-[45rem] leading-8 sm:mb-40'
+            className='mb-28 text-center max-w-[45rem] leading-8 sm:mb-40 scroll-mt-28'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
                 delay: 0.175,
             }}
+            id='about'
         >
             <SectionHeader >About me</SectionHeader>
             <p className="mb-3">
