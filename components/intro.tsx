@@ -10,18 +10,20 @@ import { HiDownload } from 'react-icons/hi'
 import { FaGithub, FaGithubSquare } from 'react-icons/fa'
 import { useActiveSectionContext } from '@/context/active-section-context'
 import { useInView } from 'react-intersection-observer'
+import { useSectionInView } from '@/lib/hooks'
 
 export default function Intro() {
-    const { setActiveSection } = useActiveSectionContext();
-    const { ref, inView } = useInView({
-        threshold: 0.5,
-    });
+    const { ref } = useSectionInView("Home", 0.5);
+    // const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+    // const { ref, inView } = useInView({
+    //     threshold: 0.5,
+    // });
 
-    useEffect(() => {
-        if (inView) {
-            setActiveSection('Home');
-        }
-    }, [inView, setActiveSection]);
+    // useEffect(() => {
+    //     if (inView && Date.now() - timeOfLastClick > 1000) {
+    //         setActiveSection('Home');
+    //     }
+    // }, [inView, setActiveSection, timeOfLastClick]);
     return (
         <section ref={ref} id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]'>
             <div className='flex items-center justify-center'>

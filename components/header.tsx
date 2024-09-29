@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { useActiveSectionContext } from '@/context/active-section-context'
 
 const Headers = () => {
-    const { activeSection, setActiveSection } = useActiveSectionContext();
+    const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
     // const [activeSection, setActiveSection] = useState('Home');
     return (
         <header className='z-[999] relative'>
@@ -34,6 +34,7 @@ const Headers = () => {
                                     href={link.hash}
                                     onClick={() => {
                                         setActiveSection(link.name);
+                                        setTimeOfLastClick(Date.now());
                                     }}
                                 >
                                     {link.name}
