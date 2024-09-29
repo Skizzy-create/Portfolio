@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer'
 import { useSectionInView } from '@/lib/hooks'
 
 export default function About() {
-    const { ref } = useSectionInView("Projects", 0.2);
+    const { ref } = useSectionInView("Projects", 0.15);
     // const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
     // const { ref, inView } = useInView({
     //     threshold: 0.2
