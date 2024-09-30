@@ -23,7 +23,7 @@ export default function About() {
     return (
         <section ref={ref} id='projects' className='scroll-mt-28 mb-28'>
             <SectionHeader>My projects</SectionHeader>
-            <div>
+            <div className='sm:mx-2 mx-6'>
                 {projectsData.map((project, index) => (
                     <React.Fragment key={index}>
                         <Project {...project} />
