@@ -5,13 +5,11 @@ import { LuGraduationCap } from "react-icons/lu";
 import BHospitalDark from "@/public/BHospital-Dark.png";
 import Rentry from "@/public/Rentry.png"
 import paytmSingup from "@/public/Paytm_singup.png";
-import groundT5 from "@/public/groundT-(-5).png"
-import groundT2 from "@/public/groundT-2.png"
-import positionEstimate from "@/public/PositionEstimator.png"
-import BHospitalLight from '@/public/BhospitalLight.png'
 import cropComment from "@/public/corpcomment.png";
 import rmtDev from '@/public/rmtdev.png';
 import wordAnalytics from '@/public/wordanalytics.png';
+import MainPage from '@/public/mainpage.png';
+import LandingPage from '@/public/landing.png';
 
 export const links = [
     {
@@ -74,21 +72,21 @@ export const projectsData = [
             "Features user sign-up, log-in, balance checks, fund transfers, and transaction views. Utilizes React for the frontend and Express.js for the backend.",
         tags: ["React", "Node", "MongoDB", "Tailwind", "Express.js", "JWT Authentication"],
         imageUrl: paytmSingup,
-    },
-    {
-        title: "MyEncrypt - Full-Stack Encryption App",
-        description:
-            "Offers encryption, decryption, JWT handling, and QR code generation, built with Express.js and TypeScript.",
-        tags: ["Express.js", "Mongoose", "JWT", "BcryptJS", "Crypto", "QR Code", "TypeScript"],
-        imageUrl: rmtDev,
-    },
-    {
+    }, {
         title: "Fashion Image Generation Using GAN",
         description:
             "Generates fashion images using a GAN trained on the Fashion MNIST dataset, emphasizing high accuracy rates.",
         tags: ["GAN", "TensorFlow", "Python", "Deep Learning"],
-        imageUrl: cropComment,
+        imageUrl: rmtDev,
     },
+    {
+        title: "MyEncrypt - Full-Stack Encryption App",
+        description:
+            "MyEncrypt offers a simple, secure way to encrypt and decrypt messages.Enter your message, and get the encrypted result. You can also generate a QR code for easy sharing and direct decryption within the app.",
+        tags: ["Express.js", "TypeScript", "BcryptJS", "Crypto", "Mongoose"],
+        imageUrl: LandingPage,
+    },
+
     {
         title: "Hybrid Model Architecture for Position Estimation",
         description:
