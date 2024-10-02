@@ -9,7 +9,7 @@ import cropComment from "@/public/corpcomment.png";
 import rmtDev from '@/public/rmtdev.png';
 import wordAnalytics from '@/public/wordanalytics.png';
 import MainPage from '@/public/mainpage.png';
-import LandingPage from '@/public/landing.png';
+import LandingPage from '@/public/LandingPage.png';
 
 export const links = [
     {
