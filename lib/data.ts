@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaBrain, FaImages, FaLock, FaReact, FaSatellite } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import BHospitalDark from "@/public/BHospital-Dark.png";
 import Rentry from "@/public/Rentry.png"
@@ -10,6 +10,7 @@ import rmtDev from '@/public/rmtdev.png';
 import wordAnalytics from '@/public/wordanalytics.png';
 import MainPage from '@/public/mainpage.png';
 import LandingPage from '@/public/LandingPage.png';
+import { BsGraphUp } from "react-icons/bs";
 
 export const links = [
     {
@@ -40,30 +41,47 @@ export const links = [
 
 export const experiencesData = [
     {
-        title: "Graduated bootcamp",
-        location: "Miami, FL",
+        title: "Machine Learning Engineer - Intern",
+        location: "Remote, United Kingdom",
         description:
-            "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-        icon: React.createElement(LuGraduationCap),
-        date: "2019",
+            "Enhanced itinerary creation in a Travel Guide by fine-tuning a Large Language Model (LLM) using Retrieval-Augmented Generation (RAG) and Self-RAG. Increased search context by 47% with an LLM internet connection pipeline and improved cost tracking by 30% with a token cost logger feature.",
+        icon: React.createElement(FaBrain),
+        date: "Aug 2023 - Jan 2024",
     },
     {
-        title: "Front-End Developer",
-        location: "Orlando, FL",
+        title: "Fashion Image Generation Using GAN",
+        location: "Mohali, Punjab",
         description:
-            "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-        icon: React.createElement(CgWorkAlt),
-        date: "2019 - 2021",
+            "Developed a GAN model to generate fashion images using the Fashion MNIST dataset. Reduced training time from 3.6 days to 33 hours through GPU acceleration, achieving a generator accuracy of 98.7%.",
+        icon: React.createElement(FaImages),
+        date: "Jun 2024 - Jul 2024",
     },
     {
-        title: "Full-Stack Developer",
-        location: "Houston, TX",
+        title: "Hybrid Model for Position Estimation",
+        location: "Mohali, Punjab",
         description:
-            "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-        icon: React.createElement(FaReact),
-        date: "2021 - present",
+            "Created a hybrid ANN and RNN model for 3D position prediction of ballistic projectiles, achieving an accuracy of 99.6%. Integrated GPU support to reduce computation time by 92%.",
+        icon: React.createElement(BsGraphUp),
+        date: "Feb 2024 - Mar 2024",
+    },
+    {
+        title: "Satellite Image Processing for Road Extraction",
+        location: "Mohali, Punjab",
+        description:
+            "Developed a U-Net model for road extraction from satellite images with 99.4% accuracy. Leveraged TensorFlow and OpenCV to reduce training time by 93%.",
+        icon: React.createElement(FaSatellite),
+        date: "Sep 2023 - Oct 2023",
+    },
+    {
+        title: "MyEncrypt - Full-Stack Encryption App",
+        location: "Gurugram, India",
+        description:
+            "Developed a full-stack encryption app allowing users to securely encrypt and decrypt messages, and generate QR codes for easy sharing. Built with Express.js, TypeScript, BcryptJS, Crypto, and Mongoose.",
+        icon: React.createElement(FaLock),
+        date: "2024",
     },
 ] as const;
+
 
 export const projectsData = [
     {
