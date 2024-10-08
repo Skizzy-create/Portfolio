@@ -10,6 +10,7 @@ import rmtDev from '@/public/rmtdev.png';
 import wordAnalytics from '@/public/wordanalytics.png';
 import MainPage from '@/public/mainpage.png';
 import LandingPage from '@/public/LandingPage.png';
+import satteliteImg from '@/public/satteliteRoad.png'
 import { BsGraphUp } from "react-icons/bs";
 
 export const links = [
@@ -117,7 +118,7 @@ export const projectsData = [
         description:
             "Employs a U-Net model to extract roads from satellite images, optimized for clarity and speed with TensorFlow and OpenCV.",
         tags: ["CNN", "U-Net", "OpenCV", "TensorFlow"],
-        imageUrl: BHospitalDark,
+        imageUrl: satteliteImg,
     }
 ] as const;
 
