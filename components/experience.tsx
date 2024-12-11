@@ -30,6 +30,7 @@ export default function Experience() {
                 }}
                 date={item.date}
                 icon={item.icon}
+                iconClassName="hover:scale-110 transform transition"
                 iconStyle={{
                   background: "white",
                   fontSize: "1.5rem",

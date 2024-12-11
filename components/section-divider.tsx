@@ -10,7 +10,7 @@ export default function SectionDivider() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             style={{
-                background: 'linear-gradient(180deg, #e2e8f0, #e2e8f0)',
+                background: 'linear-gradient(180deg, #f8cdda, #f8cdda)',
                 perspective: '1000px',
                 transformStyle: 'preserve-3d',
             }}
@@ -18,13 +18,13 @@ export default function SectionDivider() {
                 delay: 0.125,
             }}
             whileHover={{
-                background: 'linear-gradient(180deg, #f8cdda, #e0bbe4, #d1c4e9)',
+                background: 'linear-gradient(180deg, #f8cdda, #f8cdda, #f8cdda)',
                 backgroundSize: '200% 200%',
                 backgroundPosition: ['0% 50%', '100% 50%'],
                 scale: [1, 1.2, 1.1],
                 rotate: [0, 10, -10, 0],
                 x: [0, -10, 10, 0],
-                boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.3)',
+                boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.2)',
                 transition: {
                     type: 'spring',
                     stiffness: 200,
