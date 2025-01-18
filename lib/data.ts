@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaBrain, FaImages, FaLock, FaReact, FaSatellite } from "react-icons/fa";
+import { FaBrain, FaCode, FaImages, FaLock, FaReact, FaSatellite } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import BHospitalDark from "@/public/BHospital-Dark.png";
 import Rentry from "@/public/Rentry.png"
@@ -42,6 +42,14 @@ export const links = [
 
 export const experiencesData = [
     {
+        title: "Software Developer Intern",
+        location: "Kishvi Studio Digital Agency, Remote",
+        description:
+            "Designed and implemented a scalable transaction system using WebSockets and Express servers, resulting in a 22% increase in transaction efficiency. Developed a real-time broadcast server to enhance large-scale data dissemination across multiple users, reducing delays and system latency in critical operations. Built a telemetry system for actionable insights, optimized throughput by 34% with a microservices API Gateway, and created an AES-256 encryption portal with advanced key management.",
+        icon: React.createElement(FaCode),
+        date: "Jun 2024 - Nov 2024",
+    },
+    {
         title: "Machine Learning Engineer - Intern",
         location: "Remote, United Kingdom",
         description:
@@ -82,6 +90,7 @@ export const experiencesData = [
         date: "2024",
     },
 ] as const;
+
 
 
 export const projectsData = [
