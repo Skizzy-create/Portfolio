@@ -1,32 +1,31 @@
-import Headers from '@/components/header'
-import './globals.css'
-import { Inter } from 'next/font/google'
-import ActiveSectionContextProvider from '@/context/active-section-context'
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
-export const metadata = {
-  title: 'Skizzy-Create | Personal Portfolio',
-  description: 'Skizzy-Create a.k.a Kartik Aslia is a Machine Learning Engineer and a Backend Developer.',
-}
+export const metadata: Metadata = {
+  metadataBase: new URL("https://kartikaslia.vercel.app"),
+  title: "Kartik Aslia — RL Environments & Applied AI Engineer",
+  description:
+    "Kartik Aslia builds RL environments, agentic evaluation pipelines and production AI platforms — from reward-hacking defenses to systems scaled to 1000+ concurrent users.",
+  openGraph: {
+    title: "Kartik Aslia — RL Environments & Applied AI Engineer",
+    description: "Environments where AI agents learn, and the systems that keep them honest.",
+    images: ["/images/og.png"],
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", creator: "@iamKartikAslia", images: ["/images/og.png"] },
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const viewport: Viewport = { themeColor: "#04100c" };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className=' scroll-smooth'>
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 h-[6000px]`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] "></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
-        <ActiveSectionContextProvider >
-          <Headers />
-          {children}
-        </ActiveSectionContextProvider>
-      </body>
+    <html lang="en" className={`${serif.variable} ${geist.variable} ${mono.variable}`}>
+      <body>{children}</body>
     </html>
-  )
+  );
 }

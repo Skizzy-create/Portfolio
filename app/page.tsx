@@ -1,19 +1,34 @@
-import About from "@/components/about";
-import Experience from "@/components/experience";
-import Intro from "@/components/intro";
-import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
+import Sky from "@/components/Sky";
+import { SmoothScroll } from "@/components/motion";
+import { Cursor, Nav, Preloader } from "@/components/chrome";
+import Hero from "@/components/Hero";
+import About, { Marquee } from "@/components/About";
+import Journey from "@/components/Journey";
+import Work from "@/components/Work";
+import Ecosystem from "@/components/Ecosystem";
+import Principles from "@/components/Principles";
+import Play from "@/components/Play";
+import Contact from "@/components/Contact";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="flex flex-col items-center">
-      <Intro />
-      <SectionDivider />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-    </main>
-  )
+    <SmoothScroll>
+      <Preloader />
+      <Sky />
+      <div className="grain" aria-hidden />
+      <Cursor />
+      <Nav />
+      <main className="relative">
+        <Hero />
+        <Marquee />
+        <About />
+        <Journey />
+        <Work />
+        <Principles />
+        <Ecosystem />
+        <Play />
+        <Contact />
+      </main>
+    </SmoothScroll>
+  );
 }
