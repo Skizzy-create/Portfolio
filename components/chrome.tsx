@@ -149,9 +149,9 @@ export function Nav() {
   });
 
   return (
-    <header ref={ref} className="group fixed inset-x-0 top-4 z-50 flex justify-center px-4">
-      <nav className="glass flex w-full max-w-4xl items-center justify-between gap-2 rounded-full py-2 pl-5 pr-2 transition-all duration-700 group-data-[scrolled]:max-w-3xl">
-        <a href="#top" className="flex items-center gap-2 font-display text-xl tracking-tight">
+    <header ref={ref} className="group fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-4 sm:px-4">
+      <nav style={{ background: "linear-gradient(135deg, rgb(10 31 23 / 0.86), rgb(4 16 12 / 0.8))" }} className="glass flex w-full max-w-4xl items-center justify-between gap-2 rounded-full py-1.5 pl-4 pr-1.5 transition-all sm:py-2 sm:pl-5 sm:pr-2 duration-700 group-data-[scrolled]:max-w-3xl">
+        <a href="#top" className="flex items-center gap-2 whitespace-nowrap font-display text-lg tracking-tight sm:text-xl">
           <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-glow shadow-[0_0_12px_rgba(124,245,200,0.9)]" />
           Kartik Aslia
         </a>
@@ -161,7 +161,7 @@ export function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className={`relative rounded-full px-4 py-2 text-sm transition-colors duration-500 ${active === l.href ? "text-night" : "text-mist/70 hover:text-mist"}`}
+                className={`relative whitespace-nowrap rounded-full px-3 py-2 text-sm transition-colors lg:px-4 duration-500 ${active === l.href ? "text-night" : "text-mist/70 hover:text-mist"}`}
               >
                 {active === l.href && <span className="absolute inset-0 -z-10 rounded-full bg-glow/90 shadow-[0_0_24px_rgba(124,245,200,0.45)]" />}
                 {l.label}
@@ -171,8 +171,8 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <span className="hidden font-mono text-xs text-mist/50 sm:block">GGN {time}</span>
-          <a href={`mailto:${profile.email}`} className="hidden rounded-full bg-mist px-4 py-2 text-sm font-medium text-night transition hover:bg-glow sm:block">
+          <span className="hidden whitespace-nowrap font-mono text-xs text-mist/50 lg:block">GGN {time}</span>
+          <a href={`mailto:${profile.email}`} className="hidden whitespace-nowrap rounded-full bg-mist px-4 py-2 text-sm font-medium text-night transition hover:bg-glow sm:block">
             Say hello
           </a>
           <button aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} className="grid h-10 w-10 place-items-center rounded-full bg-white/10 md:hidden">
@@ -183,9 +183,9 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div className="glass absolute inset-x-4 top-16 rounded-3xl p-3 md:hidden">
+        <div className="glass absolute inset-x-3 top-[3.75rem] rounded-3xl p-3 md:hidden" style={{ background: "rgb(4 16 12 / 0.92)" }}>
           {nav.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 font-display text-2xl text-mist/90 hover:bg-white/5">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3 font-display text-2xl active:bg-white/10 text-mist/90 hover:bg-white/5">
               {l.label}
             </a>
           ))}

@@ -83,7 +83,7 @@ export default function Contact() {
   ];
 
   return (
-    <section ref={ref} id="contact" className="relative flex min-h-[110svh] flex-col overflow-hidden pt-32 md:pt-44">
+    <section ref={ref} id="contact" className="relative flex min-h-[100svh] flex-col overflow-hidden pt-24 sm:min-h-[110svh] sm:pt-32 md:pt-44">
       {/* oversized outline word drifting behind everything */}
       <p data-ghost aria-hidden className="pointer-events-none absolute left-0 top-[14%] whitespace-nowrap font-display text-[clamp(8rem,24vw,22rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(232,243,236,0.07)]">
         say hello · say hello · say hello
@@ -101,7 +101,7 @@ export default function Contact() {
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-night to-transparent" />
       </div>
 
-      <div data-copy className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-[34vh] text-center">
+      <div data-copy className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-[30vh] text-center sm:px-6 sm:pb-[34vh]">
         <p data-rise className="eyebrow mb-8 inline-flex items-center gap-3" style={{ color: "var(--color-dawn)" }}>
           <span className="relative flex h-2 w-2">
             <span className="absolute inset-0 animate-ping rounded-full bg-dawn/70" />
@@ -109,18 +109,18 @@ export default function Contact() {
           </span>
           Open to remote roles
         </p>
-        <h2 className="mx-auto max-w-5xl font-display text-[clamp(3rem,8.5vw,8rem)] leading-[0.95] tracking-[-0.035em]">
+        <h2 className="mx-auto max-w-5xl font-display text-[clamp(2.7rem,11vw,8rem)] leading-[0.95] tracking-[-0.035em]">
           Let&apos;s build what <em className="text-[var(--color-dawn)]">stays&nbsp;up.</em>
         </h2>
-        <p data-rise className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-mist/70">
+        <p data-rise className="mx-auto mt-6 max-w-xl text-base leading-relaxed sm:mt-8 sm:text-lg text-mist/70">
           RL environments, applied AI, backend infrastructure. If it has to be correct under load, I&apos;d like to hear about it.
         </p>
 
         <div data-rise className="mt-10 flex flex-col items-center gap-3">
           <Magnetic strength={0.25}>
-            <button onClick={copy} onPointerMove={sheen} className="glass group flex items-center gap-4 rounded-full py-3 pl-7 pr-3 text-left">
-              <span className="font-display text-xl md:text-3xl">{profile.email}</span>
-              <span className="grid h-11 w-11 place-items-center rounded-full bg-mist text-night transition group-hover:bg-dawn">
+            <button onClick={copy} onPointerMove={sheen} className="glass group flex max-w-[calc(100vw-2.5rem)] items-center gap-3 rounded-full py-2.5 pl-5 pr-2.5 text-left sm:gap-4 sm:py-3 sm:pl-7 sm:pr-3">
+              <span className="min-w-0 truncate font-display text-lg sm:text-xl md:text-3xl">{profile.email}</span>
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-mist sm:h-11 sm:w-11 text-night transition group-hover:bg-dawn">
                 {copied ? "✓" : "⧉"}
               </span>
             </button>
@@ -128,10 +128,10 @@ export default function Contact() {
           <span className={`text-sm text-dawn transition-opacity duration-500 ${copied ? "opacity-100" : "opacity-0"}`}>Copied to clipboard</span>
         </div>
 
-        <div data-rise className="mt-4 flex flex-wrap justify-center gap-3">
+        <div data-rise className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-3">
           {socials.map((s) => (
             <Magnetic key={s.label} strength={0.3}>
-              <a href={s.href} target="_blank" className="inline-block rounded-full border border-white/15 bg-night/50 px-5 py-2.5 text-sm text-mist/85 backdrop-blur-md transition hover:border-dawn/60 hover:text-dawn">
+              <a href={s.href} target="_blank" className="inline-block rounded-full border border-white/15 bg-night/50 px-4 py-2.5 text-sm text-mist/85 sm:px-5 backdrop-blur-md transition hover:border-dawn/60 hover:text-dawn">
                 {s.label} ↗
               </a>
             </Magnetic>
@@ -139,7 +139,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <footer className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-8 font-mono text-xs text-mist/45">
+      <footer className="relative z-10 mx-auto mt-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-center sm:flex-row sm:flex-wrap sm:gap-4 sm:px-6 sm:py-8 sm:text-left font-mono text-xs text-mist/45">
         <span>© {new Date().getFullYear()} {profile.name} · {profile.location} · IST</span>
         <a href="#top" className="transition hover:text-mist">Back to top ↑</a>
       </footer>

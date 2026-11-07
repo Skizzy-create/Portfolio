@@ -8,10 +8,10 @@ export function Marquee() {
   const words = ecosystem.flatMap((g) => g.items.slice(0, 4));
   const row = [...words, ...words];
   return (
-    <div className="relative border-y border-white/5 py-6 [mask-image:linear-gradient(90deg,transparent,#000_15%,#000_85%,transparent)]">
+    <div className="relative overflow-hidden border-y border-white/5 py-5 md:py-6 [mask-image:linear-gradient(90deg,transparent,#000_15%,#000_85%,transparent)]">
       <div className="marquee-track flex w-max gap-10 whitespace-nowrap">
         {row.map((w, i) => (
-          <span key={i} className="flex items-center gap-10 font-display text-3xl italic text-mist/40 md:text-4xl">
+          <span key={i} className="flex items-center gap-10 font-display text-2xl italic text-mist/40 sm:text-3xl md:text-4xl">
             {w}
             <svg width="14" height="14" viewBox="0 0 14 14" className="text-glow/60"><path d="M7 0C7 4 10 7 14 7C10 7 7 10 7 14C7 10 4 7 0 7C4 7 7 4 7 0Z" fill="currentColor" /></svg>
           </span>
@@ -51,15 +51,15 @@ export default function About() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="about" className="relative mx-auto max-w-7xl px-6 py-32 md:py-48">
-      <p className="eyebrow mb-10 flex items-center gap-3"><span className="h-px w-8 bg-glow/60" />About</p>
+    <section ref={ref} id="about" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-32 md:py-48">
+      <p className="eyebrow mb-8 flex items-center md:mb-10 gap-3"><span className="h-px w-8 bg-glow/60" />About</p>
 
       <div className="max-w-5xl">
         <div>
           <p data-manifesto className="font-display text-[clamp(1.8rem,3.6vw,3.4rem)] leading-[1.1] tracking-[-0.015em]">
             {profile.manifesto}
           </p>
-          <div className="mt-12 flex flex-wrap gap-x-10 gap-y-3 font-mono text-xs tracking-wider text-mist/55 uppercase">
+          <div className="mt-10 flex flex-col gap-y-2.5 font-mono text-[11px] sm:flex-row sm:flex-wrap sm:gap-x-10 sm:gap-y-3 sm:text-xs md:mt-12 tracking-wider text-mist/55 uppercase">
             <span>◦ {profile.location}</span>
             <span>◦ {education.degree} · {education.school}</span>
             <span>◦ Remote-first, worldwide</span>
@@ -68,22 +68,22 @@ export default function About() {
       </div>
 
       {/* bento of impact */}
-      <div data-grid className="mt-24 grid grid-cols-1 gap-4 [perspective:1200px] sm:grid-cols-2 lg:grid-cols-6">
+      <div data-grid className="mt-14 grid grid-cols-1 gap-3 sm:gap-4 md:mt-24 [perspective:1200px] sm:grid-cols-2 lg:grid-cols-6">
         {stats.map((s, i) => (
           <article
             key={s.label}
             data-card
             onPointerMove={sheen}
-            className={`glass group overflow-hidden rounded-[28px] p-7 ${i === 0 ? "lg:col-span-3 lg:row-span-2 lg:p-10" : i === 1 ? "lg:col-span-3" : "lg:col-span-2"}`}
+            className={`glass group overflow-hidden rounded-[24px] p-6 sm:rounded-[28px] sm:p-7 ${i === 0 ? "lg:col-span-3 lg:row-span-2 lg:p-10" : i === 1 ? "lg:col-span-3" : "lg:col-span-2"}`}
           >
             <div className="flex items-baseline gap-1">
-              <span data-stat={s.value} className={`font-display tabular-nums leading-none ${i === 0 ? "text-[clamp(5rem,12vw,11rem)] text-glow" : "text-6xl"}`}>0</span>
-              <span className={`font-display text-glow ${i === 0 ? "text-6xl" : "text-4xl"}`}>{s.suffix}</span>
+              <span data-stat={s.value} className={`font-display tabular-nums leading-none ${i === 0 ? "text-[clamp(4.5rem,12vw,11rem)] text-glow" : "text-5xl sm:text-6xl"}`}>0</span>
+              <span className={`font-display text-glow ${i === 0 ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl"}`}>{s.suffix}</span>
             </div>
             <h3 className="mt-4 text-lg font-medium">{s.label}</h3>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-mist/60">{s.detail}</p>
             {i === 0 && (
-              <svg viewBox="0 0 400 120" className="mt-10 w-full opacity-70" aria-hidden>
+              <svg viewBox="0 0 400 120" className="mt-6 w-full opacity-70 sm:mt-10" aria-hidden>
                 <defs>
                   <linearGradient id="g37" x1="0" x2="1">
                     <stop offset="0" stopColor="#ffc27a" /><stop offset="1" stopColor="#7cf5c8" />

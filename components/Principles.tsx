@@ -35,21 +35,21 @@ export default function Principles() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="principles" className="relative mx-auto max-w-7xl px-6 pt-32 md:pt-48">
+    <section ref={ref} id="principles" className="relative mx-auto max-w-7xl px-5 pt-20 sm:px-6 sm:pt-32 md:pt-48">
       <Heading eyebrow="How I build">
         Four rules I <em className="text-glow">ship by</em>
       </Heading>
 
-      <div data-grid className="mt-16 grid gap-4 [perspective:1400px] md:grid-cols-2 lg:grid-cols-4">
+      <div data-grid className="mt-10 grid gap-3 sm:mt-16 sm:gap-4 [perspective:1400px] md:grid-cols-2 lg:grid-cols-4">
         {principles.map((p, i) => (
-          <article key={p.title} data-principle onPointerMove={sheen} className="glass group flex flex-col rounded-[28px] p-7">
+          <article key={p.title} data-principle onPointerMove={sheen} className="glass group flex flex-col rounded-[22px] p-5 sm:rounded-[28px] sm:p-7">
             <div className="flex items-center justify-between">
               <svg data-glyph viewBox="0 0 36 36" className="h-10 w-10 fill-none stroke-glow drop-shadow-[0_0_10px_rgba(124,245,200,0.5)]" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                 {glyphs[i]}
               </svg>
               <span className="font-mono text-xs text-mist/40">{String(i + 1).padStart(2, "0")}</span>
             </div>
-            <h3 className="mt-10 font-display text-3xl leading-[1.02]">{p.title}</h3>
+            <h3 className="mt-6 font-display text-[1.75rem] leading-[1.02] sm:mt-10 sm:text-3xl">{p.title}</h3>
             <p className="mt-4 text-sm leading-relaxed text-mist/65">{p.body}</p>
           </article>
         ))}

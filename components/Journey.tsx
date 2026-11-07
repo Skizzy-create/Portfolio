@@ -36,7 +36,7 @@ export default function Journey() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="journey" className="relative overflow-hidden py-32 md:py-48">
+    <section ref={ref} id="journey" className="relative overflow-hidden py-20 sm:py-32 md:py-48">
       {/* optional mycelium artwork (see /public/images/README) */}
       <div
         data-bg
@@ -45,41 +45,41 @@ export default function Journey() {
         style={{ backgroundImage: "url(/images/mycelium.webp)" }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
         <Heading eyebrow="Journey">
           Roots run <em className="text-glow">deep</em>
         </Heading>
-        <p className="mt-6 max-w-xl text-mist/60">
+        <p className="mt-5 max-w-xl text-[15px] text-mist/60 sm:mt-6 sm:text-base">
           Like mycelium under a forest floor: quiet, connected, load-bearing. Here's the network I've grown so far.
         </p>
 
-        <div data-track className="relative mt-24 pl-10 md:pl-24">
+        <div data-track className="relative mt-14 pl-7 sm:pl-10 md:mt-24 md:pl-24">
           {/* vine */}
-          <div className="absolute left-3 top-0 h-full w-px bg-white/8 md:left-10">
+          <div className="absolute left-[7px] top-0 h-full w-px bg-white/8 sm:left-3 md:left-10">
             <div data-vine className="h-full w-full origin-top bg-gradient-to-b from-glow via-aurora to-dawn" />
             <div data-tip className="absolute left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow shadow-[0_0_24px_6px_rgba(124,245,200,0.6)]" />
           </div>
 
-          <div className="space-y-20 md:space-y-28">
+          <div className="space-y-14 sm:space-y-20 md:space-y-28">
             {journey.map((c) => (
               <article key={c.org + c.period} data-chapter className="relative">
-                <span data-node className="absolute -left-[33px] top-3 grid h-5 w-5 place-items-center rounded-full border border-glow/60 bg-night md:-left-[63px]">
+                <span data-node className="absolute -left-[30px] top-0.5 grid h-5 w-5 sm:-left-[37px] md:top-3 place-items-center rounded-full border border-glow/60 bg-night md:-left-[63px]">
                   <span className="h-2 w-2 rounded-full bg-glow" />
                 </span>
 
-                <div className="grid gap-6 md:grid-cols-[220px_1fr] md:gap-12">
-                  <div className="font-mono text-xs leading-6 tracking-wider text-mist/50 uppercase">
+                <div className="grid gap-3 sm:gap-6 md:grid-cols-[220px_1fr] md:gap-12">
+                  <div className="font-mono text-[11px] leading-5 tracking-wider text-mist/50 uppercase sm:text-xs sm:leading-6">
                     <p className="text-glow/90">{c.period}</p>
                     <p>{c.mode}</p>
                   </div>
 
-                  <div data-card onPointerMove={sheen} className="glass rounded-[28px] p-7 md:p-10">
+                  <div data-card onPointerMove={sheen} className="glass rounded-[22px] p-5 sm:rounded-[28px] sm:p-7 md:p-10">
                     <p className="text-sm text-mist/55">{c.org}</p>
-                    <h3 className="mt-1 font-display text-3xl leading-tight md:text-5xl">{c.title}</h3>
-                    <p className="mt-4 max-w-2xl text-mist/70">{c.summary}</p>
+                    <h3 className="mt-1 font-display text-[1.75rem] leading-tight sm:text-3xl md:text-5xl">{c.title}</h3>
+                    <p className="mt-3 max-w-2xl text-[15px] text-mist/70 sm:mt-4 sm:text-base">{c.summary}</p>
 
                     {c.points && (
-                      <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-mist/75">
+                      <ul className="mt-5 space-y-3 text-[14px] leading-relaxed sm:mt-6 sm:text-[15px] text-mist/75">
                         {c.points.map((p) => (
                           <li key={p} className="flex gap-3"><span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-glow" />{p}</li>
                         ))}
@@ -87,9 +87,9 @@ export default function Journey() {
                     )}
 
                     {c.roles && (
-                      <div className="mt-8 grid gap-4 lg:grid-cols-3">
+                      <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4 lg:grid-cols-3">
                         {c.roles.map((r) => (
-                          <div key={r.org} className="glass-soft rounded-2xl p-5">
+                          <div key={r.org} className="glass-soft rounded-2xl p-4 sm:p-5">
                             <p className="font-mono text-[11px] tracking-wider text-glow/80 uppercase">{r.period}</p>
                             <p className="mt-2 font-medium">{r.title}</p>
                             <p className="text-sm text-mist/50">{r.org}</p>

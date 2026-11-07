@@ -99,7 +99,7 @@ export default function Hero() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="top" className="relative h-[100svh] min-h-[680px] overflow-hidden">
+    <section ref={ref} id="top" className="relative h-[100svh] min-h-[620px] overflow-hidden sm:min-h-[680px]">
       {/* landscape */}
       <div className="absolute inset-0">
         {layers.map((l, i) => (
@@ -111,8 +111,8 @@ export default function Hero() {
       </div>
 
       {/* title */}
-      <div data-title className="relative z-20 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 pb-[14vh] pt-24 text-center">
-        <div data-fade className="glass-soft mb-8 inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-xs text-mist/80">
+      <div data-title className="relative z-20 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-5 pb-[12vh] pt-24 text-center sm:px-6 sm:pb-[14vh]">
+        <div data-fade className="glass-soft mb-6 inline-flex max-w-full sm:mb-8 items-center gap-2.5 rounded-full px-4 py-1.5 text-xs text-mist/80">
           <span className="relative flex h-2 w-2">
             <span className="absolute inset-0 animate-ping rounded-full bg-glow/70" />
             <span className="relative h-2 w-2 rounded-full bg-glow" />
@@ -127,26 +127,26 @@ export default function Hero() {
             ))}
           </div>
         </div>
-        <h1 className="[filter:drop-shadow(0_0_36px_rgba(124,245,200,0.16))] font-display text-[clamp(3.6rem,13vw,12.5rem)] leading-[0.86] tracking-[-0.035em]">
+        <h1 className="[filter:drop-shadow(0_0_36px_rgba(124,245,200,0.16))] font-display text-[clamp(3.9rem,17vw,12.5rem)] leading-[0.86] tracking-[-0.035em]">
           Kartik <em className="pr-[0.06em] text-[var(--color-glow)]">Aslia</em>
         </h1>
 
-        <p data-fade className="mt-8 font-display text-[clamp(1.5rem,3.2vw,2.6rem)] leading-[1.12] tracking-[-0.01em]">
+        <p data-fade className="mt-6 font-display text-[clamp(1.45rem,5.6vw,2.6rem)] sm:mt-8 leading-[1.12] tracking-[-0.01em]">
           <span className="block">{headA.trim()}</span>
           <span className="block italic text-glow">{headB}</span>
         </p>
-        <p data-fade className="mt-5 max-w-2xl text-sm leading-relaxed text-mist/60 md:text-base">{profile.subline}</p>
+        <p data-fade className="mt-4 max-w-md text-[13.5px] leading-relaxed text-mist/65 sm:mt-5 sm:max-w-2xl sm:text-sm md:text-base">{profile.subline}</p>
 
-        <div data-fade className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div data-fade className="mt-8 flex w-full flex-col items-stretch gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
           <Magnetic>
-            <a href="#work" className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-mist px-7 py-3.5 text-sm font-medium text-night">
+            <a href="#work" className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-mist px-7 py-3.5 sm:inline-flex sm:w-auto text-sm font-medium text-night">
               <span className="absolute inset-0 translate-y-full rounded-full bg-glow transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-y-0" />
               <span className="relative">Explore the work</span>
               <span className="relative transition-transform duration-500 group-hover:translate-x-1">→</span>
             </a>
           </Magnetic>
           <Magnetic>
-            <a href={profile.resume} target="_blank" className="glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm text-mist">
+            <a href={profile.resume} target="_blank" className="glass flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 sm:inline-flex sm:w-auto text-sm text-mist">
               Résumé <span className="text-mist/50">PDF</span>
             </a>
           </Magnetic>
@@ -154,7 +154,7 @@ export default function Hero() {
       </div>
 
       {/* scroll cue */}
-      <div data-fade className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 text-[10px] tracking-[0.35em] text-mist/50 uppercase">
+      <div data-fade className="absolute bottom-6 left-1/2 z-20 hidden sm:flex sm:bottom-8 -translate-x-1/2 flex-col items-center gap-3 text-[10px] tracking-[0.35em] text-mist/50 uppercase">
         Scroll
         <span className="relative h-12 w-px overflow-hidden bg-mist/15">
           <span className="absolute inset-x-0 top-0 h-1/2 animate-[scrollcue_2.2s_ease-in-out_infinite] bg-glow" />

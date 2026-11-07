@@ -45,7 +45,7 @@ function Card({ p, i }: { p: Project; i: number }) {
       data-panel
       onPointerMove={tilt}
       onPointerLeave={untilt}
-      className="glass group relative flex w-full shrink-0 flex-col overflow-hidden rounded-[32px] [transform-style:preserve-3d] lg:h-[80vh] lg:max-h-[860px] lg:w-[min(82vw,1240px)] lg:flex-row"
+      className="glass group relative flex w-full shrink-0 flex-col overflow-hidden rounded-[24px] sm:rounded-[32px] [transform-style:preserve-3d] lg:h-[80vh] lg:max-h-[860px] lg:w-[min(82vw,1240px)] lg:flex-row"
     >
       {/* artwork + system diagram */}
       <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto lg:w-[50%]">
@@ -57,7 +57,7 @@ function Card({ p, i }: { p: Project; i: number }) {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-night via-night/20 to-transparent" />
-        <div className="absolute inset-x-6 top-6 flex items-center justify-between font-mono text-[11px] tracking-[0.25em] text-mist/75 uppercase">
+        <div className="absolute inset-x-4 top-4 flex sm:inset-x-6 sm:top-6 items-center justify-between font-mono text-[11px] tracking-[0.25em] text-mist/75 uppercase">
           <span>{String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</span>
           <span className="rounded-full border border-white/15 bg-night/40 px-3 py-1 backdrop-blur-md" style={{ color: `hsl(${p.hue})` }}>{p.category}</span>
         </div>
@@ -67,14 +67,19 @@ function Card({ p, i }: { p: Project; i: number }) {
         </div>
       </div>
 
+      <div className="px-5 pt-5 sm:hidden">
+        <p className="mb-2.5 font-mono text-[10px] tracking-[0.3em] text-mist/50 uppercase">System</p>
+        <Pipeline steps={p.architecture} hue={p.hue} />
+      </div>
+
       {/* the case */}
-      <div className="relative flex flex-1 flex-col gap-6 p-7 md:p-10" style={{ transform: "translateZ(30px)" }}>
+      <div className="relative flex flex-1 flex-col gap-5 p-5 sm:gap-6 sm:p-7 md:p-10" style={{ transform: "translateZ(30px)" }}>
         <div>
           <p className="eyebrow" style={{ color: `hsl(${p.hue})` }}>{p.kicker} · {p.role}</p>
-          <h3 className="mt-3 font-display text-4xl leading-[0.95] md:text-[3.4rem]">{p.name}</h3>
+          <h3 className="mt-3 font-display text-[2.1rem] leading-[0.95] sm:text-4xl md:text-[3.4rem]">{p.name}</h3>
         </div>
 
-        <div className="space-y-5 text-[15px] leading-relaxed">
+        <div className="space-y-4 text-[14px] leading-relaxed sm:space-y-5 sm:text-[15px]">
           <div>
             <p className="mb-1.5 font-mono text-[10px] tracking-[0.3em] text-mist/45 uppercase">Problem</p>
             <p className="text-mist/75">{p.problem}</p>
@@ -110,7 +115,7 @@ function Card({ p, i }: { p: Project; i: number }) {
         <div
           aria-hidden={!open}
           inert={!open}
-          className={`absolute inset-0 flex flex-col overflow-y-auto bg-[#061711]/95 p-7 backdrop-blur-xl transition-[clip-path] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:p-10 ${open ? "[clip-path:inset(0_0_0_0)]" : "pointer-events-none [clip-path:inset(0_0_0_100%)]"}`}
+          className={`absolute inset-0 flex flex-col overflow-y-auto overscroll-contain bg-[#061711]/95 p-5 sm:p-7 backdrop-blur-xl transition-[clip-path] duration-700 ease-[cubic-bezier(.22,1,.36,1)] md:p-10 ${open ? "[clip-path:inset(0_0_0_0)]" : "pointer-events-none [clip-path:inset(0_0_0_100%)]"}`}
           data-lenis-prevent
         >
           <div className="flex items-center justify-between">
@@ -141,13 +146,13 @@ function Card({ p, i }: { p: Project; i: number }) {
 /** Closing card of the rail: the person behind the work. */
 function NextCard() {
   return (
-    <article data-panel onPointerMove={sheen} className="glass relative flex w-full shrink-0 flex-col items-center justify-center gap-8 overflow-hidden rounded-[32px] p-10 text-center lg:h-[80vh] lg:max-h-[860px] lg:w-[min(60vw,720px)]">
+    <article data-panel onPointerMove={sheen} className="glass relative flex w-full shrink-0 flex-col items-center justify-center gap-6 overflow-hidden rounded-[24px] p-6 sm:gap-8 sm:rounded-[32px] sm:p-10 text-center lg:h-[80vh] lg:max-h-[860px] lg:w-[min(60vw,720px)]">
             <div className="relative h-40 w-full max-w-sm text-mist md:h-48">
         <Grove seed={99} hue="160 85% 72%" className="h-full w-full" density={0.8} />
       </div>
       <div className="relative">
         <p className="eyebrow justify-center">Next chapter</p>
-        <h3 className="mt-4 font-display text-4xl leading-[1] md:text-6xl">
+        <h3 className="mt-4 font-display text-[2.1rem] leading-[1] sm:text-4xl md:text-6xl">
           Your hardest problem<br />could be <em className="text-[var(--color-glow)]">card eight.</em>
         </h3>
         <p className="mx-auto mt-5 max-w-md text-mist/65">
@@ -208,7 +213,7 @@ export default function Work() {
 
   return (
     <section ref={ref} id="work" className="relative">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 pt-32 md:pt-48 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 pt-20 sm:px-6 sm:pt-32 md:pt-48 lg:flex-row lg:items-end lg:justify-between">
         <Heading eyebrow="Selected work">
           Systems I've <em className="text-glow">shipped</em>
         </Heading>
@@ -219,8 +224,8 @@ export default function Work() {
         </div>
       </div>
 
-      <div data-pin className="relative py-16 lg:flex lg:h-screen lg:items-center lg:py-0">
-        <div data-rail className="flex flex-col gap-6 px-6 [perspective:1600px] lg:flex-row lg:gap-8 lg:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] lg:pr-6">
+      <div data-pin className="relative py-10 sm:py-16 lg:flex lg:h-screen lg:items-center lg:py-0">
+        <div data-rail className="flex flex-col gap-5 px-5 sm:gap-6 sm:px-6 [perspective:1600px] lg:flex-row lg:gap-8 lg:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] lg:pr-6">
           {projects.map((p, i) => <Card key={p.name} p={p} i={i} />)}
           <NextCard />
         </div>

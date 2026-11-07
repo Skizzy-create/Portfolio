@@ -114,11 +114,11 @@ export function Heading({ eyebrow, children, className = "" }: { eyebrow: string
   }, { scope: ref });
   return (
     <div ref={ref} className={className}>
-      <p className="eyebrow mb-5 flex items-center gap-3">
+      <p className="eyebrow mb-4 flex sm:mb-5 items-center gap-3">
         <span className="h-px w-8 bg-glow/60" />
         {eyebrow}
       </p>
-      <h2 className="font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[0.95] tracking-[-0.02em] text-balance">
+      <h2 className="font-display text-[clamp(2.5rem,9vw,6.5rem)] leading-[0.95] tracking-[-0.02em] text-balance">
         {children}
       </h2>
     </div>

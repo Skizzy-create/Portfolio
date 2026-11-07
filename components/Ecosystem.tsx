@@ -31,33 +31,33 @@ export default function Ecosystem() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} id="ecosystem" className="relative mx-auto max-w-7xl px-6 py-32 md:py-48">
+    <section ref={ref} id="ecosystem" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-32 md:py-48">
       <Heading eyebrow="Ecosystem">
         Tools, used in <em className="text-glow">anger</em>
       </Heading>
 
-      <div className="mt-20 grid gap-5 md:grid-cols-2">
+      <div className="mt-10 grid gap-4 sm:mt-20 sm:gap-5 md:grid-cols-2">
         {ecosystem.map((g, gi) => (
-          <div key={g.name} data-group onPointerMove={sheen} className="glass group overflow-hidden rounded-[30px]">
-            <div className="relative h-36 overflow-hidden border-b border-white/[0.06] md:h-44">
+          <div key={g.name} data-group onPointerMove={sheen} className="glass group overflow-hidden rounded-[24px] sm:rounded-[30px]">
+            <div className="relative h-28 overflow-hidden sm:h-36 border-b border-white/[0.06] md:h-44">
               <div data-eco-art className="absolute inset-x-6 inset-y-3 text-mist">
                 <Grove seed={gi * 13 + 5} hue={hues[gi]} className="h-full w-full" density={1.3} />
               </div>
-              <div className="absolute inset-x-7 top-5 flex items-start justify-between md:inset-x-9">
-                <h3 className="font-display text-3xl md:text-4xl">{g.name}</h3>
+              <div className="absolute inset-x-5 top-4 flex items-start justify-between sm:inset-x-7 sm:top-5 md:inset-x-9">
+                <h3 className="font-display text-[1.75rem] sm:text-3xl md:text-4xl">{g.name}</h3>
                 <span className="font-mono text-xs text-mist/40">{String(gi + 1).padStart(2, "0")}</span>
               </div>
             </div>
 
-            <div className="p-7 pt-5 md:p-9 md:pt-6">
+            <div className="p-5 pt-4 sm:p-7 sm:pt-5 md:p-9 md:pt-6">
               <p className="text-mist/70">{g.blurb}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-1.5 sm:mt-6 sm:gap-2">
                 {g.items.map((s, i) => (
                   <span
                     key={s}
                     data-chip
                     data-cursor
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[13px] text-mist/80 transition-[color,border-color,box-shadow] duration-500 hover:text-night"
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12.5px] sm:px-3.5 sm:text-[13px] text-mist/80 transition-[color,border-color,box-shadow] duration-500 hover:text-night"
                     style={{ animation: `drift ${5 + (i % 4)}s ease-in-out ${i * 0.3}s infinite` }}
                     onPointerEnter={(e) => Object.assign(e.currentTarget.style, { background: accents[gi], borderColor: accents[gi], boxShadow: `0 0 28px ${accents[gi]}66` })}
                     onPointerLeave={(e) => Object.assign(e.currentTarget.style, { background: "", borderColor: "", boxShadow: "" })}
@@ -66,7 +66,7 @@ export default function Ecosystem() {
                   </span>
                 ))}
               </div>
-              <p className="mt-7 flex gap-3 border-t border-white/10 pt-5 text-sm leading-relaxed text-mist/75">
+              <p className="mt-6 flex flex-col gap-2 border-t sm:mt-7 sm:flex-row sm:gap-3 border-white/10 pt-5 text-sm leading-relaxed text-mist/75">
                 <span className="font-mono text-[10px] tracking-[0.3em] uppercase" style={{ color: accents[gi] }}>Proof</span>
                 {g.proof}
               </p>
@@ -75,15 +75,15 @@ export default function Ecosystem() {
         ))}
       </div>
 
-      <div data-honors className="mt-28 grid gap-4 md:grid-cols-4">
+      <div data-honors className="mt-14 grid grid-cols-2 gap-3 sm:mt-28 sm:gap-4 md:grid-cols-4">
         {honors.map((h) => (
-          <div key={h.title} data-honor className="glass-soft rounded-3xl p-7">
-            <p className="font-display text-5xl text-glow">{h.place}</p>
+          <div key={h.title} data-honor className="glass-soft rounded-3xl p-5 sm:p-7">
+            <p className="font-display text-4xl sm:text-5xl text-glow">{h.place}</p>
             <p className="mt-4 font-medium">{h.title}</p>
             <p className="mt-1 text-sm text-mist/55">{h.note}</p>
           </div>
         ))}
-        <div data-honor className="glass-soft rounded-3xl p-7">
+        <div data-honor className="glass-soft col-span-2 rounded-3xl p-5 sm:p-7 md:col-span-1">
           <p className="font-mono text-xs tracking-wider text-glow/80 uppercase">{education.period}</p>
           <p className="mt-4 font-medium">{education.degree}</p>
           <p className="mt-1 text-sm text-mist/55">{education.school} · {education.grade}</p>
